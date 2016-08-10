@@ -9,8 +9,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 0
-  companyName: App Advisory
-  productName: Stop The Wheel
+  companyName: CodeGround
+  productName: Munchee
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 0
@@ -89,8 +89,8 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: com.appadvisory.stopthewheel
-  bundleVersion: 1.0.1
+  bundleIdentifier: com.CodeGround.Munchee
+  bundleVersion: 0.1
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
@@ -98,7 +98,7 @@ PlayerSettings:
   virtualRealitySupported: 0
   productGUID: 471883ff7e7154ae48fe35dfc80e7d99
   AndroidBundleVersionCode: 2
-  AndroidMinSdkVersion: 9
+  AndroidMinSdkVersion: 14
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   apiCompatibilityLevel: 2
@@ -167,8 +167,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: /Volumes/LaCie/Dropbox/Anthony/__AppAdvisory/_DOCS/yourappname.keystore
-  AndroidKeyaliasName: appnamealias
+  AndroidKeystoreName: "C:/Users/Bozhidar/\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0438/KeyStores/SpaceRun/mykeystore.keystore"
+  AndroidKeyaliasName: spacerun
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1

@@ -140,8 +140,9 @@ public class WheelLogic : MonoBehaviourHelper
 				newColor =  allCircles[UnityEngine.Random.Range(0, allCircles.Count)].image.color;
 			}
 		}
-
-		triangle.color = newColor;
+	    Color triangleColor = newColor;
+	    triangleColor.a = 255;
+		triangle.color = triangleColor;
 
 		firstChangeColor = false;
 	}
