@@ -40,7 +40,7 @@ public class WheelLogic : MonoBehaviourHelper
 	/// <summary>
 	/// Reference to the Triangle Image on the top of the wheel
 	/// </summary>
-	public Image triangle;
+	public Image[] eyes;
 	/// <summary>
 	/// Reference to all the parts contained in the wheel, for the current level
 	/// </summary>
@@ -97,8 +97,8 @@ public class WheelLogic : MonoBehaviourHelper
 	{
 		float width = FindObjectOfType<Canvas>().GetComponent<RectTransform>().sizeDelta.x;
 
-		borderShadow.rectTransform.sizeDelta = Vector2.one * width * 0.90f;
-		border.rectTransform.sizeDelta = Vector2.one * width * 0.95f;
+		//borderShadow.rectTransform.sizeDelta = Vector2.one * width * 0.90f;
+		//border.rectTransform.sizeDelta = Vector2.one * width * 0.95f;
 
 	
 		BuildWheel();
@@ -120,7 +120,7 @@ public class WheelLogic : MonoBehaviourHelper
 	/// </summary>
 	public void DOColorTriangle()
 	{
-		lastColor = triangle.color;
+		lastColor = eyes[0].color;
 
 		Color newColor =  allCircles[UnityEngine.Random.Range(0, allCircles.Count)].image.color;
 
@@ -142,9 +142,10 @@ public class WheelLogic : MonoBehaviourHelper
 		}
 	    Color triangleColor = newColor;
 	    triangleColor.a = 255;
-		triangle.color = triangleColor;
+		eyes[0].color = triangleColor;
+        eyes[1].color = triangleColor;
 
-		firstChangeColor = false;
+        firstChangeColor = false;
 	}
 	/// <summary>
 	/// Check if the player tap at the good moment on the screen, ie. check if the color of the triangle = the color of the part of the wheel below the triangle
@@ -161,7 +162,7 @@ public class WheelLogic : MonoBehaviourHelper
 			}
 		}
 
-		if(selection.image.color.IsEqual(triangle.color))
+		if(selection.image.color.IsEqual(eyes[0].color))
 		{
 			return true;
 		}

@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviourHelper
 		if(!Util.RestartFromGameOver())
 		{
 			float width = FindObjectOfType<Canvas>().GetComponent<RectTransform>().sizeDelta.x;
-			wheelParent.anchoredPosition = new Vector3(width,0,0);
+			wheelParent.anchoredPosition = new Vector3(width, 0, 0);
 		}
 	}
 	/// <summary>
@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviourHelper
 		if(!Util.RestartFromGameOver())
 		{
 			float width = FindObjectOfType<Canvas>().GetComponent<RectTransform>().sizeDelta.x;
-			wheelParent.anchoredPosition = new Vector3(width,0,0);
+			wheelParent.anchoredPosition = new Vector3(width, 0, 0);
 		}
 
 		SetNewGame ();
@@ -206,7 +206,7 @@ public class GameManager : MonoBehaviourHelper
 
 		DOVirtual.Float(0f, 50f, 0.3f, 
 			(float f) => {
-				wheelLogic.triangle.rectTransform.anchoredPosition = new Vector3(0,f,0);
+				//wheelLogic.eyes[0].rectTransform.anchoredPosition = new Vector3(0,f,0);
 			})
 			.SetEase(Ease.InQuad)
 			.OnComplete(()=>{
@@ -225,10 +225,11 @@ public class GameManager : MonoBehaviourHelper
 	void DOMoveLevelOut(Action callback)
 	{
 		float width = FindObjectOfType<Canvas>().GetComponent<RectTransform>().sizeDelta.x;
+        float y = wheelParent.anchoredPosition.y;
 
-		DOVirtual.Float(0f, -width, 0.3f, 
+        DOVirtual.Float(0f, -width, 0.3f, 
 			(float f) => {
-				wheelParent.anchoredPosition = new Vector3(f,0,0);
+				wheelParent.anchoredPosition = new Vector3(f, 0, 0);
 			})
 			.OnComplete(()=>{
 				if(callback != null)
@@ -241,11 +242,11 @@ public class GameManager : MonoBehaviourHelper
 	void DOMoveLevelIn(Action callback)
 	{
 		float width = FindObjectOfType<Canvas>().GetComponent<RectTransform>().sizeDelta.x;
-
-		DOVirtual.Float(+width, 0f, 0.3f, 
+        float y = wheelParent.anchoredPosition.y;
+        DOVirtual.Float(+width, 0f, 0.3f, 
 			(float f) => {
 		
-				wheelParent.anchoredPosition = new Vector3(f,0,0);
+				wheelParent.anchoredPosition = new Vector3(f, 0, 0);
 			})
 			.SetDelay(0.1f)
 			.OnComplete(()=>{
